@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des commandes</title>
+        <style>
+            table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+
+        </style>
+
+</head>
+<body> 
+
+    <h1>Liste des commandes</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Ville de départ</th>
+				<th>Date de départ</th>
+				<th>Date de retour</th>
+				<th>Nombre de passager</th>
+				<th>Nombre de jours</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for commandes in commandes %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ commandes[0] }}</td>
+				<td>{{ commandes[1] }}</td>
+				<td>{{ commandes[2] }}</td>
+				<td>{{ commandes[3] }}</td>
+				<td>{{ commandes[4] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

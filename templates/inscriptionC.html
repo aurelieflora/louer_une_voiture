@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+
+    </head>
+<body>
+</head>
+<body>
+	<div class="form-container">
+		<div class="titre"><h2>Formulaire d'inscription</h2></div>
+		<form action="{{ url_for('inscriptionC') }} " method="POST">
+			<label>Nom et Prénoms:</label>
+			<input type="text" placeholder="Nom et Prénoms" name="np" required><br>
+			<label>Téléphone:</label>
+			<input type="text" placeholder="Téléphone" name="telephone" required><br>
+			<label>Email:</label>
+			<input type="email" placeholder="Email" name="email" required><br>
+			<label>Mot de passe:</label>
+			<input type="password" placeholder="Mot de passe" name="mdp" required><br><br>
+			<input type="submit" value="S'inscrire"> <br>
+            <a href="{{url_for('loginC')}}" class="trois">Avez-vous deja un compte?</a>
+
+		</form>
+	</div>
+</body>
+</html>
+
+
+</body>
+</html>

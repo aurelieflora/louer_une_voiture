@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acceuil utilisateur</title>
+
+    
+      <style>
+        .form-container {
+          background-color: #9239e6;;;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+          width: 50%;
+         margin-left: 30%;     
+        height: 60%;
+        }
+        
+        .form-control {
+          background-color: #ffffff;
+          border-radius: 5px;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-color: #9239e6;;
+
+        }
+      </style>
+    </head>
+    <body>
+      <div class="form-container">
+        <form action="{{ url_for('accueilC') }}" method="POST">
+          <div class="form-control">
+            <label for="full-name">Nom complet :</label>
+            <input type="text" id="full-name" name="nom_complet" required>
+          </div>
+          <div class="form-control">
+            <label for="identificationNumber">Numéro de la pièce:</label>
+            <input type="text" class="form-control" id="identificationNumber" name="num_piece" required>
+          </div>
+          <div class="form-control">
+            <label for="driving-license-number">Numéro de permis de conduire :</label>
+            <input type="text" id="driving-license-number" name="num_permis" required>
+          </div>
+          <div class="form-control">
+            <label for="driving-history">Antécédents de conduite :</label>
+            <textarea id="driving-history" rows="5" name="antecedent" required></textarea>
+          </div>
+          <label for="paymentMethod">Moyen de paiement:</label>
+    <select class="form-control" id="paymentMethod" name="paiement">
+      <option value="creditCard">Carte de crédit/débit</option>
+      <option value="orangeMoney">Orange Money</option>
+      <option value="wave">Wave</option>
+      <option value="mtnMoney">MTN Money</option>
+    </select>
+    <!-- <label for="profilePicture">Ajouter une photo pour votre profil:</label>
+    <input type="file" class="form-control" id="profilePicture" name="img"> -->
+  <div><button type="submit">Soumettre</button></div>
+          </div>
+          
+
+        </form><a href="{{url_for('service')}}" class=""> aller</a>
+      </div>
+    
+    
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+        <title>Liste des clients</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    
+
+</head>
+<body>
+ 
+	<h1 style="color:rgb(31, 31, 224); text-align: center;">LISTE DES CLIENTS</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>NOM ET PRENOMS</th>
+				<th>TELEPHONE</th>
+				<th>EMAIL</th>
+				<th>NUMEROS DE PIECE</th>
+				<th>NUMEROS DE PERMIS</th>
+				<th>ANTECEDENT</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in data %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td>{{ row[5] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+</body>
+</html>

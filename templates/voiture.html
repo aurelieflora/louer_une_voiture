@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    button{
+width:  150px;
+height: 30px;
+border-color: rgb(160, 83, 232);
+border-radius: 10px;
+margin-left: 50px;
+margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="ma page" style="width:600px; border-color: rgb(143, 72, 210); float:right; margin-right: 30%; border-style: solid; height:600px; border-radius: 10px;" >
+        
+        <div class="cinq">
+            <img src="{{url_for('static', filename='images/' + vehicule[11])}}" style="width:500px; border-style: none; height:300px; border-radius: 10px; margin-top:20px; margin-left:8px;">
+        </div>
+        <div style="margin-left: 30px;">
+            Modèle: {{vehicule[1]}} <br>
+            Année: {{vehicule[2]}}<br>
+            Numéro d'immatriculation: {{vehicule[3]}}<br>
+            Couleur: {{vehicule[4]}}<br>
+            Nombre de portes: {{vehicule[5]}}<br>
+            Nombre de sièges: {{vehicule[6]}}<br>
+            Carburant: {{vehicule[7]}}<br>
+            Boîte de vitesses: {{vehicule[8]}}.<br>
+            Kilométrage: {{vehicule[9]}} <br>
+            Prix/jour:{{vehicule[10]}}
+        </div>
+        <a href="{{url_for('location')}}" class="trois">
+            <button>Commander</button>&nbsp; &nbsp; &nbsp;<button>Commentaire</button>
+        </a>
+    </div
+    
+</body>
+</html> 
+

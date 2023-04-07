@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaire de location</title>
+
+    <style>
+        form {
+          background-color: #b65de3;
+          border: 2px solid blue;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px grey;
+          padding: 20px;
+          width:    450px;
+          margin: 20px auto;
+          height: 500px;
+        }
+  
+        h3 {
+          text-align: center;
+          color: rgb(245, 245, 250);
+        }
+  
+        label {
+          font-weight: bold;
+          color: white;
+        }
+  
+        input[type="text"], input[type="date"], input[type="number"], 
+        select {
+          width: 90%;
+          padding: 12px;
+          border-radius: 10px;
+          border: 1px solid blue;
+          margin-bottom: 20px;
+        }
+  
+        input[type="submit"] {
+          background-color: blue;
+          color: white;
+          padding: 12px 20px;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+          float: right;
+        }
+  
+        input[type="submit"]:hover {
+          background-color: lightblue;
+        }
+      </style>
+    </head>
+    <body>
+      <form action="{{ url_for('location') }} " method="POST">
+        <h3>Faire une commande de voiture</h3>
+        <label for="ville_depart">Ville de départ:</label>
+        <select id="ville_depart" name="ville_depart">
+          <option value="Abidjan">Abidjan</option>
+          <option value="Bouaké">Bouaké</option>
+          <option value="Yamoussoukro">Yamoussoukro</option>
+          <option value="San-Pédro">San-Pédro</option>
+          <option value="Daloa">Daloa</option>
+          <option value="Korhogo">Korhogo</option>
+          <option value="Man">Man</option>
+          <option value="Grand-Bassam">Grand-Bassam</option>
+          <option value="Anyama">Anyama</option>
+          <option value="Divo">Divo</option>
+          <option value="Aboisso">Aboisso</option>
+          <option value="Gagnoa">Gagnoa</option>
+          <option value="Adzopé">Adzopé</option>
+          <option value="Issia">Issia</option>
+          <option value="Agboville">Agboville</option>
+          <option value="Bondoukou">Bondoukou</option>
+          <option value="Jacqueville">Jacqueville</option>
+          <option value="Abengourou">Abengourou</option>
+          <option value="Sinfra">Sinfra</option>
+          <option value="Seguela">Seguela</option>
+        </select> <br>
+  
+        <label for="date_depart">Date de départ:</label>
+        <input type="date" id="date_depart" name="date_depart"> <br>
+  
+        <label for="date_retour">Date de retour:</label>
+        <input type="date" id="date_retour" name="date_retour"> <br>
+
+  
+        <label for="nombre_passagers">Nombre de passagers:</label>
+        <input type="number" id="nombre_passagers" name="nombre_passagers"> <br> 
+  
+        <label for="nombre_jours">Nombre de jours:</label>
+<input type="number" id="nombre_jours" name="nombre_jours" value="{{ nombre_jours }}">
+
+        <!-- <input type="hidden" name="prix_location" value="{{ prix_location }}"> -->
+
+        <input type="submit" value="Valider">
+      </form>
+  
+      
+    
+      
+</body>
+</html>

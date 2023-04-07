@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERVICE</title>
+
+
+  <style>
+    nav a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    /* Style pour les liens actifs */
+    nav a.active {
+      color: rgb#9239e6;
+      font-weight: bold;
+    }
+
+    /* Style pour les liens survolés */
+    nav a:hover {
+      text-decoration: underline;
+      color: #9239e6;
+    }
+
+    /* Style pour les barres de menu */
+    [type="text"] {
+      border: 2px solid #9239e6;
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      border-radius: 50px;
+    }
+
+    /* Style pour le filtre d'image */
+    .image-filter {
+      border: 2px solid 111111;
+      padding: 10px;
+      text-align: center;
+      width: 50%;
+      display: inline-block;
+      /* float: right; */
+      margin-left: 25%;
+      margin-top: 30px;
+      color: #9239e6;
+
+    }
+
+    .voiture {
+      border: 2px solid #9239e6;
+      ;
+      padding: 10px;
+      text-align: center;
+      width: 800px;
+      height: 400px;
+      display: inline-block;
+      margin-left: 22%;
+      margin-top: 50px;
+
+    }
+
+    nav {
+      background-color: #9239e6;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #9239e6;
+    }
+
+
+
+    footer {
+      background-color: #9239e6;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 100%;
+    }
+
+    .cinq {
+      width: 180px;
+      height: 100px;
+      border-style: solid;
+      float: right;
+      margin-right: 60px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+  </head>
+
+  <body>
+
+   
+     <nav>
+      <a href="#" class="active">Accueil</a>
+      <a href="#">Location</a>
+      <a href="#">Nos Voitures</a>
+      <a href="#">A propos de nous</a>
+      <a href="#">Annonces</a>
+    </nav> 
+
+    <!-- Barres de menu -->
+     <div class="menu">
+      <input type="text" placeholder="Recherche">
+      <button>Rechercher</button>
+    </div>
+
+    <div class="image-filter">
+      <div id="div_marques">
+        <p>
+        <h2> Fais ton choix en fonction des marques</h2>
+        </p>
+      </div>
+    </div> 
+
+     <div class="voiture">
+    {% for vehicule in vehicules %}
+    <a href="{{ url_for('voiture', vehicule_id=vehicule[0]) }}" class="un">
+      <div class="cinq">
+            <img src="{{ url_for('static', filename='images/' + vehicule[11]) }}" alt="{{ vehicule[11] }}" style="width:180px; height:100px; border-radius:15px;">
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<form action="{{url_for('service')}}" method="post">
+    {% if session.offset >= 9 %}
+    <input type="submit" value="Voir moins" name="voir_moins">
+    {% endif %}
+    <input type="submit" value="Voir plus" name="voir_plus">
+</form>
+
+
+     
+
+  <footer id="footer">
+    <p>&copy; 2023 - Votre société</p>
+  </footer>
+
+
+
+
+  </body>
+
+</html>

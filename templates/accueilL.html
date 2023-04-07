@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFORMATION DU VEHICULES</title>
+
+    <style>
+        .container {
+          background-color: #905a9c;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px #888888;
+        }
+        h1 {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  input[type="text"],input[type="number"],
+  select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888888;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888888;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="reset"] {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Informations sur le véhicule</h1>
+        <form action="{{ url_for('accueilL') }}" method="POST" enctype="multipart/form-data">
+          <label>Marque du véhicule :</label>
+          <input type="text" name="marque">
+          <br>
+          <label>Année/Modèle :</label>
+          <input type="text" name="annee_modele">
+          <br>
+      
+          <label>Numéro d'immatriculation :</label>
+          <input type="text" name="immatriculation">
+          <br>
+      
+          <label>Couleur :</label>
+          <input type="text" name="couleur">
+          <br>
+      
+          <label>Nombre de portes :</label>
+          <input type="number" name="nombre_porte">
+          <br>
+      
+          <label>Nombre de sièges :</label>
+          <input type="number" name="nombre_siege">
+          <br>
+      
+          <label>Type de carburant :</label>
+          <select name="type_carburant">
+            <option value="essence">Essence</option>
+            <option value="diesel">Diesel</option>
+            <option value="électrique">Électrique</option>
+          </select>
+          <br>
+      
+          <label>Boite de vitesse :</label>
+          <select name="boite_vitesse">
+            <option value="manuelle">Manuelle</option>
+            <option value="automatique">Automatique</option>
+          </select> <br>
+          <label>Kilométrage :</label>
+          <input type="text" name="kilometrage"> <br>
+
+<div class="form-group">
+  <div class="form-group">
+    <label for="prix">Prix de location/jour :</label>
+    <input type="number" class="form-control-file" id="prix" name="prix_location" value="{{ prix_location }}">
+</div> 
+
+      </div> <br>
+    <div class="form-group">
+        <label for="image">Choisir une image :</label>
+        <input type="file" class="form-control-file" id="image" name="img">
+      </div> <br>
+
+      
+
+      <input type="submit" value="Envoyer">
+      <input type="reset" value="Annuler">
+      <a href="{{url_for('acceder')}}" class="trois">Je suis deja enregistré</a>
+
+    </form>
+    </div>
+</body>
+</html>
